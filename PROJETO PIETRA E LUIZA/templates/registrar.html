@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registrar{% endblock %}
+{% block conteudo %}
+
+    {% with lista = get_flashed_messages() %}
+        {% if lista%}
+            <ul class="list-unstyled">
+                {% for mensagem in lista %}
+                    <li class="alert alert-danger" role="alert">{{mensagem}}</li>
+                {% endfor %}
+            </ul>
+{% endif %}
+{% endwith %}
+<html lang="pt-BR" data-bs-theme="dark">
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="w-100 m-auto form-container">
+    
+        <form method="POST" action="{{ url_for('registrar') }}">
+            <h2 class="mb-3 fw-normal">Registrar</h2>
+            <div class="form-floating">
+                <label for="exampleInputPassword1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="textEmail" aria-describedby="emailHelp">
+            </div> 
+
+            <div class="form-floating">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="textSenha" >
+            </div> 
+            <br>
+
+            <button type="submit"  class="btn btn-primary w-100 py-2">Registrar</button>
+        </form>
+
+        <p><a href="{{ url_for('login') }}">Já tem uma conta? Faça login</a></p>
+    </main>
+</body>
+</html>
+{% endblock conteudo %}

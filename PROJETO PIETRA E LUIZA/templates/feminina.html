@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block titulo %}Home{% endblock titulo%}
+
+{% block conteudo %}
+
+<main class="container" >
+    <div class="row g-5">
+        <h1 class="pb-4 mb-4 fst-italic border-bottom">Repúblicas Femininas da UNESP</h1>
+    </div>
+
+    <div class="row gy-3">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/krakatoa.png') }}" class="card-img-top" alt="Krakatoa">
+                <div class="card-body">
+                    <h3 class="mb-0">Krakatoa</h3>
+                    <p class="card-text">Desde 1998</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/breja.png') }}" class="card-img-top" alt="Breja">
+                <div class="card-body">
+                    <h3 class="mb-0">Breja-Flor</h3>
+                    <p class="card-text">Desde 2012</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/phour.png') }}" class="card-img-top" alt="Phour">
+                <div class="card-body">
+                    <h3 class="mb-0">Rep Hour</h3>
+                    <p class="card-text">Desde 2013</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <br>
+    <div class="row gy-3">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/lolitas.png') }}" class="card-img-top" alt="Lolitas">
+                <div class="card-body">
+                    <h3 class="mb-0">Lolitas</h3>
+                    <p class="card-text">Desde 2006</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/eter.png') }}" class="card-img-top" alt="Éternamente">
+                <div class="card-body">
+                    <h3 class="mb-0">Éternamente</h3>
+                    <p class="card-text">Desde 2009</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/parace.png') }}" class="card-img-top" alt="Paracetamal">
+                <div class="card-body">
+                    <h3 class="mb-0">Paracetamal</h3>
+                    <p class="card-text">Desde 2006</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+{% endblock conteudo %}

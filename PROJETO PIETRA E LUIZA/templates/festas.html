@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<main class="container">
+    <div class="row g-5">
+        <h1 class="pb-4 mb-4 fst-italic border-bottom">Comprar Ingresso para a Festa</h1>
+    </div>
+
+    <!-- Exibe mensagens flash -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Formulário para adicionar ingresso ao carrinho -->
+    <form action="{{ url_for('front_controller.adicionar_ingresso') }}" method="POST" enctype="multipart/form-data">
+      
+              <label for="nome">Nome completo:</label>
+              <input type="text" name="nome" required><br>
+              <label for="telefone">Telefone:</label>
+              <input type="text" name="telefone" required><br>
+  
+              <label for="email">E-mail:</label>
+              <input type="email" name="email" required><br>
+              <label for="quantidade">Quantidade:</label>
+              <input type="number" name="quantidade" min="1" value="1" required><br>
+            
+              <label for="foto">Foto:</label>
+              <input type="file" name="foto" accept="image/*" required><br>
+            
+    <button type="submit">Adicionar ao Carrinho</button>
+    </form>
+
+    <!-- Carrinho de ingressos -->
+    <h3>Carrinho de Ingressos</h3>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Quantidade</th>
+            <th>Foto</th>
+            <th>Ações</th>
+        </tr>
+        {% for ingresso in ingressos %}
+        <tr>
+            <td>{{ ingresso.nome }}</td>
+            <td>{{ ingresso.telefone }}</td>
+            <td>{{ ingresso.email }}</td>
+            <td>{{ ingresso.quantidade }}</td>
+            <td><img src="{{ ingresso.foto }}" alt="Foto de identificação" style="width: 50px; height: 50px;"></td>
+            <td>
+                <form action="{{ url_for('front_controller.remover_ingresso', ingresso_id=ingresso.id) }}" method="POST">
+                    <button type="submit">Remover</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Botão para finalizar a compra -->
+    <form action="{{ url_for('front_controller.finalizar_compra') }}" method="POST">
+        <button type="submit">Finalizar Compra</button>
+    </form>
+    <link rel="stylesheet" href="static/css/folha.css">
+</main>
+{% endblock conteudo %}
+
+

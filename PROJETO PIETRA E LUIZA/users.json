@@ -1,0 +1,20 @@
+{
+    "users": [
+        {
+            "email": "emanuellirahim@gmail.com",
+            "password": "admin"
+        },
+        {
+            "email": "emanuelli@gmail.com",
+            "password": "admin"
+        },
+        {
+            "email": "pietra@gmail.com",
+            "password": "admin"
+        },
+        {
+            "email": "rahim@gmail.com",
+            "password": "abcd"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block titulo %}Home{% endblock titulo%}
+
+{% block conteudo %}
+
+<main class="container" >
+    <div class="row g-5">
+        <h1 class="pb-4 mb-4 fst-italic border-bottom">Repúblicas Masculinas da UNESP</h1>
+    </div>
+
+    <div class="row gy-3">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/quebra.png') }}" class="card-img-top" alt="Quebra">
+                <div class="card-body">
+                    <h3 class="mb-0">Quebra-Tudo</h3>
+                    <p class="card-text">Desde 2001</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/soca.png') }}" class="card-img-top" alt="Capim">
+                <div class="card-body">
+                    <h3 class="mb-0">Só Capim Canela</h3>
+                    <p class="card-text">Desde 2001</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/diretoria.png') }}" class="card-img-top" alt="Diretoria">
+                <div class="card-body">
+                    <h3 class="mb-0">Diretoria</h3>
+                    <p class="card-text">Desde 2004</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <br>
+    <div class="row gy-3">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/varzea.png') }}" class="card-img-top" alt="Varzea">
+                <div class="card-body">
+                    <h3 class="mb-0">Várzea</h3>
+                    <p class="card-text">Desde 1978</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/intro.png') }}" class="card-img-top" alt="Intrometeu">
+                <div class="card-body">
+                    <h3 class="mb-0">Intrometeu</h3>
+                    <p class="card-text">Desde 2008</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{url_for('static', filename='image/caverna.png') }}" class="card-img-top" alt="Caverna">
+                <div class="card-body">
+                    <h3 class="mb-0">ICaverna</h3>
+                    <p class="card-text">Desde 1993</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+
+
+{% endblock conteudo %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block titulo %}Home{% endblock titulo%}
+
+
+{% block conteudo %}
+
+    {% with lista = get_flashed_messages() %}
+        {% if lista%}
+            <ul class="list-unstyled">
+                {% for mensagem in lista %}
+                    <li class="alert alert-success" role="alert">{{mensagem}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <main class="container">
+        
+            <div class="p-4 p-md-5 mb-4 text-white bg-dark rounded">
+              <div class="col-md-6 px-0">
+                <h2 class="display-4 fst-italic">Repúblicas UNESP</h2>
+                <p class="lead my-3">Conheça um pouco sobre algumas repúblicas da UNESP-Araraquara e se apaixone por esse mundo
+                   universitário que só a favorita do estado te proporciona.</p>
+              </div>
+            </div> 
+            
+            <div class="row mb-2">
+  
+              <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">FESTAS</strong>
+                    <h3 class="mb-0">O inter</h3>
+                    <div class="mb-1 text-muted">Jun 07</div>
+                    <p class="card-text mb-auto">O maior e melhor encontro da comunidade Unespiana, com 4 festas em 3 dias de eventos totalizando 36 horas de OPEN BAR. </p>
+                  </div>
+                  <div class="col-auto d-none d-lg-block">
+                    <img src="{{url_for('static', filename='image/inter.png') }}" alt="O inter" width="200" height="250" class="bd-placeholder-img">
+                  </div>
+                </div>
+              </div>
+                
+              <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">REPÚBLICAS</strong>
+                    <h3 class="mb-0">Visitação</h3>
+                    <div class="mb-1 text-muted">Fev 01</div>
+                    <p class="card-text mb-auto">Está procurando lugar para morar? Venha conhecer as repúblicas tradicionais de farmácia que compõem o Grêmio através do 
+                      circuito de visitação que irá acontecer dentre os dias 10/02 a 16/02.  </p>
+                  </div>
+                  <div class="col-auto d-none d-lg-block">
+                    <img src="{{url_for('static', filename='image/visita.png') }}" alt="Repúblicas" width="200" height="250" class="bd-placeholder-img">
+                   </div>
+                </div>
+              </div>
+          </div>
+         
+    </main>
+    {% endwith %}
+ 
+{% endblock conteudo%}
